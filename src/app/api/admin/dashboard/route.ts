@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
+import { activeCampaignId } from "@/lib/claim-utils";
 import { getDashboardSnapshotFromDb } from "@/lib/dashboard-db";
 import type { QRStatus, ScanLogStatus } from "@/lib/types";
 
@@ -15,7 +16,7 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
 
   const snapshot = await getDashboardSnapshotFromDb({
-    campaignId: url.searchParams.get("campaignId") || "BTC-2026-JKT",
+    campaignId: url.searchParams.get("campaignId") || activeCampaignId,
     qrStatus: (url.searchParams.get("qrStatus") as QRStatus | "all" | null) || "all",
     logStatus: (url.searchParams.get("logStatus") as ScanLogStatus | "all" | null) || "all",
     search: url.searchParams.get("search") || ""
