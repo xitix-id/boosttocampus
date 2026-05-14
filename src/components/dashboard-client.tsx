@@ -90,7 +90,7 @@ function UploadManager() {
 }
 
 export function DashboardClient() {
-  const [query, setQuery] = useState<DashboardQuery>({ campaignId: "BTC-2026-JKT", qrStatus: "all", logStatus: "all", search: "" });
+  const [query, setQuery] = useState<DashboardQuery>({ campaignId: "BTC 2026 Lampung", qrStatus: "all", logStatus: "all", search: "" });
   const [snapshot, setSnapshot] = useState<DashboardSnapshot | null>(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -149,7 +149,7 @@ export function DashboardClient() {
             <Search className="size-4 text-btc-lime" aria-hidden="true" />
             <input className="btc-focus min-w-0 flex-1 bg-transparent text-sm font-bold text-white placeholder:text-btc-mist" placeholder="Cari kode, nama, HP, IP..." value={query.search} onChange={(event) => setQuery((current) => ({ ...current, search: event.target.value }))} />
           </label>
-          <button type="button" className="btc-focus min-h-11 bg-btc-lime px-4 text-sm font-black uppercase tracking-[0.14em] text-btc-ink" style={{ borderRadius: 8 }} onClick={() => setQuery({ campaignId: "BTC-2026-JKT", qrStatus: "all", logStatus: "all", search: "" })}>Reset</button>
+          <button type="button" className="btc-focus min-h-11 bg-btc-lime px-4 text-sm font-black uppercase tracking-[0.14em] text-btc-ink" style={{ borderRadius: 8 }} onClick={() => setQuery({ campaignId: "BTC 2026 Lampung", qrStatus: "all", logStatus: "all", search: "" })}>Reset</button>
         </section>
 
         {error ? <section className="btc-panel border-red-300/40 bg-red-300/10 p-4 text-sm font-bold text-red-100">{error}</section> : null}
