@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1778775039610,
+      "tag": "0000_orange_jetstream",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1778775471204,
+      "tag": "0001_slippery_frank_castle",
+      "breakpoints": true
+    }
+  ]
+}
