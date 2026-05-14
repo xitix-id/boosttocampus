@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #16002f;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(22, 0, 47, 0.94) 0%, rgba(66, 18, 133, 0.92) 50%, rgba(22, 0, 47, 0.98) 100%),
+    #16002f;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  color: #16002f;
+  background: #8fe70b;
+}
+
+@layer components {
+  .btc-panel {
+    @apply border border-btc-line bg-btc-panel backdrop-blur-xl;
+    border-radius: 8px;
+  }
+
+  .btc-focus {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-btc-lime focus-visible:ring-offset-2 focus-visible:ring-offset-btc-ink;
+  }
+}
+
+.claim-bg {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(171, 87, 255, 0.46) 0 18%, rgba(100, 39, 209, 0.38) 19% 34%, transparent 35%),
+    radial-gradient(circle at 16% 82%, rgba(30, 144, 255, 0.42), transparent 34%),
+    radial-gradient(circle at 84% 18%, rgba(132, 0, 255, 0.48), transparent 34%),
+    linear-gradient(180deg, #100035 0%, #421285 52%, #12002d 100%);
+}
+
+.claim-rays {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: max(190vh, 190vw);
+  height: max(190vh, 190vw);
+  transform: translate(-50%, -50%);
+  opacity: 0.28;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.42) 0deg 2deg, transparent 2deg 8deg);
+  animation: claim-spin 34s linear infinite;
+  mask-image: radial-gradient(circle, black 0 64%, transparent 78%);
+  transform-origin: center;
+}
+
+.claim-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
+  filter: blur(0.2px);
+}
+
+.claim-orbit-one {
+  left: 50%;
+  top: 28%;
+  width: 540px;
+  height: 540px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.claim-orbit-two {
+  left: -26%;
+  bottom: -18%;
+  width: 420px;
+  height: 420px;
+  background: rgba(143, 231, 11, 0.07);
+}
+
+@keyframes claim-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-rays {
+    animation: none;
+  }
+}
