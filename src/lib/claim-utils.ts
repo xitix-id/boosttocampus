@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const activeCampaignId = process.env.ACTIVE_CAMPAIGN_ID || "BTC-2026-JKT";
+export const activeCampaignId = process.env.ACTIVE_CAMPAIGN_ID || "BTC 2026 Lampung";
 
 export const claimCodeSchema = z
   .string()
